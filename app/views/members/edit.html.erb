@@ -1,0 +1,8 @@
+<h1>編集</h1>
+
+<p><%= link_to "詳細に戻る", @member %><br></p>
+
+<%= form_for @member do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+  <% end %>

@@ -1,0 +1,69 @@
+
+<h1><%= @member.name %></h1>
+
+<table class = "attr">
+<body bgcolor = "#fff4dd">
+  <tr>
+    <th width = "150">名前</th>
+    <td><%= @member.name %></td>
+  </tr>
+
+  <tr>
+    <th width = "150">フリガナ</th>
+    <td><%= @member.furigana %></td>
+  </tr>
+
+  <tr>
+    <th>局</th>
+    <td><%= @member.kyoku %></td>
+  </tr>
+
+  <% if @member.kyokuchou == 1 %>
+  <tr>
+    <th></th>
+    <td>局長</td>
+  </tr>
+  <% end %>
+
+  <tr>
+    <th>課程</th>
+    <td><%= @member.cource %></td>
+  </tr>
+
+  <tr>
+    <th>学年</th>
+    <td><%= @member.gakunen %></td>
+  </tr>
+
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= @member.email %></td>
+  </tr>
+
+  <tr>
+    <th>研究室</th>
+    <td>
+      <% if @member.labo.present? %>
+      <%= @member.labo %>研究室</td>
+      <% else %>
+      <p>研究室に配属されていません</p>
+      <% end %>
+  </tr>
+
+  <tr>
+    <th width = "150">仕事内容</th>
+    <td><%= @member.work %></td>
+  </tr>
+
+
+
+</tabel>
+
+<p>
+  <%= link_to "[編集]", [:edit, @member] %></p>
+  <%= link_to "[削除]" ,member_path(@member.id), method: :delete, data: {confirm: "本当に削除しますか？"} %><br>
+
+</p>
+
+</body>
+<%= link_to "一覧に戻る", "/" %>

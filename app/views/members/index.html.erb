@@ -1,0 +1,36 @@
+<h1><%= image_tag "logo.png" , :size => '50x50' %>　<font size = "7">技大祭実行委員名簿</font></h1>
+<font size = "4">
+<body bgcolor = "#fff4dd">
+<% form_tag :search_members, method: :get do %>
+<p>
+  <%= text_field_tag "q" , params[:q] %>
+  <%= submit_tag "search" %>
+</p>
+  <% end %>
+
+<% if @members.present? %>
+<table class = "list">
+<tr>
+  <th style = "text-align: center">名前</th>
+  <th style = "text-align: center">局</th>
+  <th style = "text-align: center">メールアドレス</th>
+
+</tr>
+<% @members.each do |member| %>
+<tr>
+  <td style = "text-align: center"><%= link_to member.name, member_path(member.id) %></td>
+  <td style = "text-align: center"><%= member.kyoku %></td>
+  <td style = "text-align: center"><%= member.email %></td>
+
+
+</td>
+</tr>
+<% end %>
+</tabel>
+<% else %>
+<p>情報がありません</p>
+<% end %>
+
+<p><%= link_to "[メンバーを追加する]" ,:new_member %></p>
+</body>
+</font>

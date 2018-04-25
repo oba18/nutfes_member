@@ -1,0 +1,58 @@
+
+
+<table class = "attr">
+<body bgcolor = "#fff4dd">
+  <tr>
+    <th><%= form.label :name, "名前" %></th>
+    <td><%= form.text_field :name , size: 20 %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :furigana, "フリガナ" %></th>
+    <td><%= form.text_field :furigana , size: 20 %></td>
+  </tr>
+
+  <tr>
+    <th>局</th>
+    <td><% options = ["総務局","企画局","渉外局","財務局","制作局"] %>
+      <%= form.select :kyoku, options %>
+    </td>
+  </tr>
+
+  <tr>
+    <th>局長</th>
+    <td><%= form.check_box :kyokuchou %>
+        <%= form.label :kyokuchou, "局長" %>
+      </td>
+    </tr>
+
+  <tr>
+    <th>課程</th>
+    <td><% options = ["機械創造工学課程","電気電子情報工学課程","物質材料工学課程","環境社会基盤工学課程","生物機能工学課程","情報・経営システム工学課程","原子力安全工学専攻","技術科学イノベーション","課程配属前"] %>
+      <%= form.select :cource, options %>
+      </td>
+    </tr>
+
+  <tr>
+    <th>学年</th>
+    <td><% options = ["B1","B2","B3","B4","M1","M2","D1","D2","D3"] %>
+      <%= form.select :gakunen, options %>
+    </td>
+  </tr>
+
+    <tr>
+      <th><%= form.label :email, "メールアドレス" %></th>
+      <td><%= form.text_field :email , size: 30 %></td>
+    </tr>
+
+    <tr>
+      <th><%= form.label :labo, "研究室" %></th>
+      <td><%= form.text_field :labo ,size: 20 %>研究室</td>
+    </tr>
+
+    <tr>
+      <th><%= form.label :work, "仕事内容" %></th>
+      <td><%= form.text_field :work , size: 200 %></td>
+    </tr>
+  </table>
+  </body>
